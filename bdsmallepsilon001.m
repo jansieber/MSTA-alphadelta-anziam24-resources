@@ -55,6 +55,8 @@ prob = coco_set(prob, 'cont', 'PtMX',[200,0], 'NAdapt', 5,...
    'h_max',1e5,'NPR',100,'MaxRes',100,'norm',inf);
 coco(prob, 'po_smalleps001UZ', [], 1, 'G', [0.5 4]);
 %%
+% data for canrad near Hopf bifurcation G1 
+
 % define user points near Hopf bifurcation G1 
 % prob = coco_add_event(prob, 'uz', 'G', 1.4821:0.0001:1.5);
 % prob = coco_set(prob, 'cont', 'PtMX',[200,0], 'NAdapt', 5,...
