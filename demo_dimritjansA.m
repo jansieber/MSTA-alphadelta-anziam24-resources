@@ -33,6 +33,7 @@ prob = ode_HB2po(prob, '', 'ep_inputp0', HBlab(3));
 prob = coco_set(prob, 'cont', 'PtMX',[700,0], 'NAdapt', 5,...
    'h_max',1e3,'NPR',10,'MaxRes',100,'norm',inf);
 coco(prob, 'po_inputp0', [], 1, 'A', [0.5 20]);
+% this data used to produce time profile in Fig 2
 %%
 %p=120
 
@@ -57,7 +58,6 @@ prob = ode_HB2po(prob, '', 'ep_inputp120', HBlab(3));
 prob = coco_set(prob, 'cont', 'PtMX',[700,0], 'NAdapt', 5,...
    'h_max',1e3,'NPR',10,'MaxRes',100,'norm',inf);
 coco(prob, 'po_inputp120', [], 1, {'A','po.period'}, [0.5 20]);
-% this data used to produce time profile in Fig 2
 
 
 
