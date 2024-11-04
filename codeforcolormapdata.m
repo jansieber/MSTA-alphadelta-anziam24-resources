@@ -62,9 +62,9 @@ bstararry=repmat(b_star_values,length(dtG),1);
 levels = [0, 1, 2, 5, 10, 20, 50, 100];
 figure;
 contourf(bstararry, G_mod, periodsarray,levels,'LineStyle','none');
-save('mybstararry.mat', 'bstararry');
-save('myG_modData.mat', 'G_mod');
-save('myperiodsarray.mat','periodsarray');
+save('bs_vals6050.mat', 'bstararry');
+save('G_vals6050.mat', 'G_mod');
+save('period_vals6050.mat','periodsarray');
  xlabel('$b^*$');
  ylabel('$G$');
 toc
