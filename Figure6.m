@@ -1,5 +1,7 @@
-figure;
-
+ clear; figure;
+%%
+% run coco_2023August15
+%  run file symnondritjan_eps
 %%
 % plot colormap 
 
@@ -97,6 +99,8 @@ ip=struct(cl{:});
 F=sco_gen(@symnondritjan_eps);       
 funcs = {F(''),F('x'),F('p')};   % r.h.s, derivative rt x and derivative wrt p
 % dimpar=load('dimeparam.mat');
+dimpar=load('C:\Users\hm672\OneDrive - University of Exeter\Documents\MATLAB\gen-nondimritjansen Coco functions\dimeparam.mat');
+
 beta=2*dimpar.a/(dimpar.B*dimpar.r*dimpar.C*2*dimpar.e0);% 0.024;
 alpha1=1; alpha3=0.25;
 jnew=2;
