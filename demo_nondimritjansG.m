@@ -2,7 +2,6 @@
 %% run startup function of coco March 2023
 %% run file gen_sys_nodimwitheps
 %%
-
 clear
 parnames={'jnew','G','P','alpha1','alpha2','alpha3','alpha4','b_star','c','beta',...
     'epsilon','x01','x02','x03','a1','a2','a3'};
@@ -61,3 +60,37 @@ prob = coco_set(prob, 'cont', 'PtMX',[2000,0], 'NAdapt', 2,...
     'h0',1e-1,'h_min',1e-5 ,'NPR',10,'MaxRes',100,'norm',inf);
 
 bd_Ho2po_a2_alph3 = coco(prob, 'POinput0', [], 1, {'G','po.period'}, {[0.5 20] [0 510]});
+%%
+%track Hopf and SN
+%continue family of Hopf bifuraction by varying G,bstar
+%%
+old_name='bdeps0244';
+bd_ep=coco_bd_read(old_name);
+
+HBlab = coco_bd_labs(bd_ep, 'HB');
+SNlab = coco_bd_labs(bd_ep, 'SN');
+
+for i=1
+    runid = sprintf('HB_Gbstar%d_run', i);
+
+    prob = coco_prob();
+    prob = ode_ep2HB(prob, '', old_name, HBlab(i));
+
+    prob = coco_add_event(prob, 'UZ', 'b_star', 0.2:0.001:0.5);%linspace(0.1,0.5,20)
+
+    fprintf(...
+        '\n Run=''%s'': Continue family of HB from point %d in run ''%s''.\n', ...
+        runid, i, 'HB_run');
+    coco(prob,runid , [], 1, {'G' 'b_star'}, {[0.3 3.5] [0.2 0.5]});
+end
+%%
+for i=2
+    runid = sprintf('SN_Gbstar_%d_run', i);
+    prob = coco_prob();
+    
+    prob = ode_ep2SN(prob, '', 'bdeps0244', SNlab(i));
+
+    % add user points
+    prob = coco_add_event(prob, 'UZ', 'b_star', 0.2:0.001:0.5);%linspace(0.1,0.5,20)
+    coco(prob,runid , [], 1, {'G' 'b_star'}, {[0.3 4] [0.2 0.5]});
+end
