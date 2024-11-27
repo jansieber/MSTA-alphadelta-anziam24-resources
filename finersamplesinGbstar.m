@@ -4,7 +4,7 @@ format compact
 cl=[parnames;num2cell(1:length(parnames))];
 ip=struct(cl{:});
 %a finer sampling over the range of bstar
-bstargrid=linspace(0.2,0.5,50);
+bstargrid=linspace(0.2,0.5,500);
 % HB in G,bstar
 bG=bd_getpoint('GandbstarHB','UZ',parnames);
 Ghopf1=interp1(bG(ip.b_star,:),bG(ip.G,:),bstargrid,'spline');
