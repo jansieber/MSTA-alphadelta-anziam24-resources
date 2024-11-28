@@ -1,4 +1,4 @@
 # MSTA-alphadelta-anziam24-resources
 
-1. go to coco folder 2023
-2. run `startup.m` 
+1. Download  coco_2023August15.zip use the [link] (https://sourceforge.net/projects/cocotools/files/releases/).
+  * unzip file and run `startup.m` 
