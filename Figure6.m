@@ -64,7 +64,7 @@ hold on;
 for i=1:2
 thm = ep_plot_theme('ep.SN');
 thm.lspec={'m',  'LineWidth',  2};
-coco_plot_bd(thm, sprintf('Posn_%d_run',i),'b_star', 'G');
+coco_plot_bd(thm, sprintf('SN_Gbstar_%d_run',i),'b_star', 'G');
 end
 xlabel(ax,'$b^*$',ltx{:});
 ylabel(ax,'$G$',ltx{:});
@@ -98,9 +98,7 @@ cl=[parnames;num2cell(1:length(parnames))];
 ip=struct(cl{:});               
 F=sco_gen(@symnondritjan_eps);       
 funcs = {F(''),F('x'),F('p')};   % r.h.s, derivative rt x and derivative wrt p
-% dimpar=load('dimeparam.mat');
-dimpar=load('C:\Users\hm672\OneDrive - University of Exeter\Documents\MATLAB\gen-nondimritjansen Coco functions\dimeparam.mat');
-
+dimpar=load('dimeparam.mat');
 beta=2*dimpar.a/(dimpar.B*dimpar.r*dimpar.C*2*dimpar.e0);% 0.024;
 alpha1=1; alpha3=0.25;
 jnew=2;
