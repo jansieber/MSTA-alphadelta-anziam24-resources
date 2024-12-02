@@ -1,10 +1,5 @@
-%% Load path (run by coco March 2023)
-%% run file gen_sym_ritjansen
-%%
+%% FIRST run file gen_sym_ritjansen to genrate sym_ritjansen
 clear
-  cocofolder=fileparts(which('coco'));
-  symcocopath=[cocofolder,'/../../contributed/symcoco/toolbox'];
-  addpath(symcocopath); % path of symcoco routines
  parnames={'A','B','a','b','C1','e0','r','v0','P'};
 format compact
 cl=[parnames;num2cell(1:length(parnames))];
