@@ -1,8 +1,4 @@
-%% generate right-hand side for Rit-Jansen model
 clear
-% cocofolder=fileparts(which('coco'));
-% symcocopath=[cocofolder,'/../../contributed/symcoco/toolbox'];
-% addpath(symcocopath); % path of symcoco routines
 parnames={'A','B','a','b','C1','e0','r','v0','P'};
 %% Create symbols for parameters, states and delays states
 % The array |par| is the array of symbols in the same order as parnames.
