@@ -1,7 +1,4 @@
-%% run by COCO AUGUEST 23
-%% run startup function of coco March 2023
 %% run file gen_sys_nodimwitheps
-%%
 clear
 parnames={'jnew','G','P','alpha1','alpha2','alpha3','alpha4','b_star','c','beta',...
     'epsilon','x01','x02','x03','a1','a2','a3'};
