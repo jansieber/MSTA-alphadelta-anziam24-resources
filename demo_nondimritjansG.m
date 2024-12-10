@@ -8,7 +8,7 @@ ip=struct(cl{:});                % automaticaly number parameters
 F=sco_gen(@symnondritjan_eps);       % F and F2 are the same
 funcs = {F(''),F('x'),F('p')};   % r.h.s, derivative rt x and derivative wrt p
 %% initial guess for parameters
-dimpar=load('C:\Users\hm672\OneDrive - University of Exeter\Documents\MATLAB\gen-nondimritjansen Coco functions\dimeparam.mat');
+dimpar=load([pwd(),filesep,'dimeparam.mat']);
 beta=2*dimpar.a/(dimpar.B*dimpar.r*dimpar.C*2*dimpar.e0);% 0.024;
 alpha1=1; alpha3=0.25;
 jnew=2;
@@ -67,19 +67,19 @@ bd_ep=coco_bd_read(old_name);
 HBlab = coco_bd_labs(bd_ep, 'HB');
 SNlab = coco_bd_labs(bd_ep, 'SN');
 
-for i=1
-    runid = sprintf('HB_Gbstar%d_run', i);
+i=1;
+runid = sprintf('HB_Gbstar%d_run', i);
 
-    prob = coco_prob();
-    prob = ode_ep2HB(prob, '', old_name, HBlab(i));
+prob = coco_prob();
+prob = ode_ep2HB(prob, '', old_name, HBlab(i));
 
-    prob = coco_add_event(prob, 'UZ', 'b_star', 0.2:0.001:0.5);%linspace(0.1,0.5,20)
-
-    fprintf(...
-        '\n Run=''%s'': Continue family of HB from point %d in run ''%s''.\n', ...
-        runid, i, 'HB_run');
-    coco(prob,runid , [], 1, {'G' 'b_star'}, {[0.3 3.5] [0.2 0.5]});
-end
+prob = coco_add_event(prob, 'UZ', 'b_star', 0.2:0.001:0.5);%linspace(0.1,0.5,20)
+[data, uidx] = coco_get_func_data(prob, 'ep.hb', 'data', 'uidx');
+prob = coco_add_pars(prob, 'om_squared', uidx(data.ep_hb.k_idx), {'om2'});
+fprintf(...
+    '\n Run=''%s'': Continue family of HB from point %d in run ''%s''.\n', ...
+    runid, i, 'HB_run');
+coco(prob,runid , [], 1, {'G' 'b_star' 'om2'}, {[0.3 3.5] [0.2 0.5]});
 %%
 for i=2
     runid = sprintf('SN_Gbstar_%d_run', i);

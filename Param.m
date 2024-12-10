@@ -1,5 +1,5 @@
 %% model pramaters of dimensional version
-clear; 
+%clear; 
 C=135; % connectivity constants
 C1=C;
 C2=0.8*C;

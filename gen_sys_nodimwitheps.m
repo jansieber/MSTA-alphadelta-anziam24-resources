@@ -1,6 +1,6 @@
 %% generate right-hand side for non dim Rit-Jansen model
 %% load dim param 
- dim=load('C:\Users\hm672\OneDrive - University of Exeter\Documents\MATLAB\gen-nondimritjansen Coco functions\dimeparam.mat');
+% dim=load('C:\Users\hm672\OneDrive - University of Exeter\Documents\MATLAB\gen-nondimritjansen Coco functions\dimeparam.mat');
 parnames={'jnew','G','P','alpha1','alpha2','alpha3','alpha4','b_star', ...
     'c','beta','epsilon',...
     'x01','x02','x03','a1','a2','a3'};
