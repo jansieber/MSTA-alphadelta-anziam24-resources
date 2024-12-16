@@ -1,6 +1,4 @@
-% run by coco_March 2020
-%%
-% run startup function of coco_March 2020
+% run startup COCO function
 % run file gen_sys_nodimwitheps
 
 %% Load path
@@ -16,7 +14,7 @@ ip=struct(cl{:});                % automaticaly number parameters
 F=sco_gen(@symnondritjan_eps);       % F and F2 are the same
 funcs = {F(''),F('x'),F('p')};   % r.h.s, derivative rt x and derivative wrt p
 %% initial guess for parameters
-dimpar=load('dimeparam.mat');
+dimpar=load([pwd(),filesep,'dimeparam.mat']);% dowonload param scribt file 
 beta=2*dimpar.a/(dimpar.B*dimpar.r*dimpar.C*2*dimpar.e0);%0.024; 
 alpha1=1;alpha2=0.8; alpha3=0.25;
 jnew=2;
