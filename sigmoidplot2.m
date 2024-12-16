@@ -13,7 +13,7 @@ dimpar.r= 0.5600;
 dimpar.v0= 6;
 % Example data
 ydim = linspace(-10,20,300);
-%dimpar=load('C:\Users\hm672\OneDrive - University of Exeter\Documents\MATLAB\gen-nondimritjansen Coco functions\dimeparam.mat');
+dimpar=load([pwd(),filesep,'dimeparam.mat']);% dowonload param scribt file 
 sigm=@(x)2*dimpar.e0./(1+exp(dimpar.r.*(dimpar.v0-x)));
 %%
 bstar=dimpar.b/dimpar.a;
