@@ -1,5 +1,5 @@
 % xeq anaylsis for small epsilon=0.001
-dimpar=load('dimeparam.mat');
+dimpar=load([pwd(),filesep,'dimeparam.mat']);% dowonload param scribt file 
 beta=2*dimpar.a/(dimpar.B*dimpar.r*dimpar.C*2*dimpar.e0);% 0.024;
 epsilon=0.001;
 alpha1=1;
