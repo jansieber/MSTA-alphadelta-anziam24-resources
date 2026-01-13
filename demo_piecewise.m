@@ -1,10 +1,8 @@
 clear
 %%
 % run startup of coco August 2023
-
 %%
-dimpar=load('C:\Users\hm672\OneDrive - University of Exeter\Documents\MATLAB\gen-nondimritjansen Coco functions\dimeparam.mat');
-dimpar=load('dimeparam.mat');
+dimpar=load([pwd(),filesep,'dimeparam.mat']);% dowonload param scribt file 
 c=dimpar.r*dimpar.v0;
 beta=2*dimpar.a/(dimpar.B*dimpar.r*dimpar.C*2*dimpar.e0);% 0.024;;
 alpha1=1;
@@ -28,7 +26,6 @@ u2=[alpha4*jnew/b; 0]; % Example input
 y3=alpha2*jnew/G;
 y1thr=y3-y01;
 %% time points I got them from fsolverfortimepoints.m
-% C:\Users\hm672\OneDrive - University of Exeter\Desktop\Data for 3y\mode_demo_nondimritjansen\fsolverfortimepoints.m
 % load the result
 t=load('initialdataoft');
 T=t.t(1);
