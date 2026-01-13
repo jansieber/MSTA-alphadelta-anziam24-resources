@@ -11,7 +11,7 @@ lw={'linewidth',2};
 %%
 
 %%
-dimpar=load('C:\Users\hm672\OneDrive - University of Exeter\Documents\MATLAB\gen-nondimritjansen Coco functions\dimeparam.mat');
+dimpar=load([pwd(),'/dimeparam.mat']);
 alpha1=1;alpha2=0.8; alpha3=0.25;alpha4=0.25;
 beta=2*dimpar.a/(dimpar.B*dimpar.r*dimpar.C*2*dimpar.e0);% 0.024;
 epsilon=0.001;
